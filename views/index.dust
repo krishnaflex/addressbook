@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Address Book</title>
+<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+
+<link href="css/flat.css" rel="stylesheet">
+<link href="css/page.css" rel="stylesheet">
+</head>
+
+<!--body start here-->
+<body>
+
+<div class="container-fluid">
+  <div class="row">
+    <div >
+      <div class="fChild_nav">
+        <label class="ex_txt_white">Address book</label>
+        
+           <div class="ex_gly_container">
+               <div id="ex_edit_Adr" class="ex_gly_div"><a href="javascript:void(0);" class="glyphicons pen ex_gly_dec">&nbsp;</a></div>
+               <div id="ex_add_Adr" class="ex_gly_div"><a href="javascript:void(0);" class="glyphicons plus ex_gly_def">&nbsp;</a></div>
+               </div>    
+               
+      </div>
+      <div id="ex_nav_frt" class="ex_nav_sub">
+        <div id="ex_editNum" class="hide ex_editNum ex_mwH">
+          <div id="ex_inp" class="control-group ex_log_mar mls" style="float:left">
+          </div>
+          
+  
+          </div>
+        </div>
+      </div>
+      <div id="show_mailInput3" class="hide">
+        <div class="control-group phl ex_log_mar">
+         </div>
+     
+      </div>
+      <!--address-->
+      <div class="ex_adr_par" style="display:inline-block">
+        <div class="ex_adres_ser col-md-4">
+          <div class="control-group ex_log_mar">
+            <input id="search" type="text" placeholder="Search" class="ex_input ex_add_change">
+            <span class="glyphicons ip_icon ex_pen_icon search" id="search-contacts"></span> 
+            <div id="display-name">
+            	
+            </div>
+           </div>
+           {#contacts}
+        	<p class="contact-name" data-mobileNumber="{mobile_number}">{first_name}</p>
+        	{/contacts}   
+        </div>
+        <div class="ex_adres_mail col-md-4">
+         	 <div class="ex_gly_div"><a href="javascript:void(0);" class="glyphicons google_maps ex_gly_dec ex_ad_icon">&nbsp;</a></div>
+       		  <div class="ex_adres">
+         		   <p>Details</p>
+            <div id="hide_add">
+            	 {#contacts[0]}
+	            	<label class="add_lable">Name :</label>
+	              <p id='name' class="lable-style"> {first_name}</p>
+	              <label class=" add_lable">mobile : </label>
+	              <p id='mob' class="lable-style"> {mobile_number}</p>
+	              <label class=" add_lable">home-phone :</label>
+	              <p id='home-mob' class="lable-style"> {home_number}</p>
+
+	              <label class="add_lable">Email :</label>
+	              <p id='mail' class="lable-style">{email}</p>
+	              <label class="add_lable">Address :</label>
+	              <p id='addr' class="lable-style">{address}</p>
+             	{/contacts[0]}
+            </div>
+          </div>
+          <div id="show_mailInput4" class="clear hide mtm ex_wid">
+	          <form method="post">
+	            <div class="control-group ex_log_mar">
+	              <input id="first_name" name="first_name" type="text" placeholder="First name" class="ex_input ex_add_change">
+	              <span class="glyphicons pen ip_icon ex_pen_icon"></span> </div>
+	            <div class="control-group ex_log_mar">
+	              <input id="last_name" name="last_name" type="text" placeholder="Last name" class="ex_input ex_add_change">
+	              <span class="glyphicons pen ip_icon ex_pen_icon"></span> </div>
+	            <div class="control-group ex_log_mar">
+	              <input id="mobile_number" name="mobile_number" type="text" placeholder="Phone" class="ex_input ex_add_change">
+	              <span class="glyphicons glyphicon-earphone ip_icon ex_pen_icon"></span> 
+	            </div>
+	            <div class="control-group ex_log_mar">
+	              <input id="home_number" name="home_number" type="text" placeholder="Phone" class="ex_input ex_add_change">
+	              <span class="glyphicons glyphicon-earphone ip_icon ex_pen_icon"></span> 
+	            </div>
+	            <div class="control-group ex_log_mar">
+	              <input id="email" name="email" type="text" placeholder="Email" class="ex_input ex_add_change">
+	              <span class="glyphicons google_maps ip_icon ex_pen_icon"></span> 
+	            </div>
+	            <div class="control-group ex_log_mar">
+	              <input id="address" name="address" type="text" placeholder="Address" class="ex_input ex_add_change">
+	              <span class="glyphicons google_maps ip_icon ex_pen_icon"></span> 
+	            </div>
+	            <div class="control-group mls pull-left" style="display:inline-block"> </div>
+	            <div class="pull-left ex_tab_mar">
+	              <button type="submit" class="btn btn-primary mrm ex_saveEdit" style="float:left">Save</button>
+	              <a id="can_mail4" class="ex_saveEdit ex_canEdit" style="float:left">Cancel</a>
+	            </div>
+	          </form>
+          </div>
+           
+        </div>
+      </div>
+      <!--address end-->
+      <div class="clear"></div>
+      
+    </div>
+  </div>
+
+
+
+<script src="js/jquery.js"></script> 
+
+
+<script>
+
+ $("#ex_edit_Adr").click(function(){
+		 $("#hide_add").hide();
+		 $("#show_mailInput4").show();
+		 
+		 $("#first_name").val("Ram");
+		 $("#last_name").val("kore");
+		 $("#mobile_number").val("1111111111");
+		 $("#home_number").val("222222222");
+		 $("#email").val("test@test.com");
+		 $("#address").val("kore vally");
+		 });
+		 $("#ex_add_Adr").click(function(){
+		 $("#hide_add").hide();
+		 $("#show_mailInput4").show();
+		 $("#ex_mail_name").val("");
+		 $("#ex_add_1").val("");
+		 $("#ex_add_2").val("");
+		 $("#ex_zip").val("");
+		 });
+	$("#can_mail4").click(function(){
+		$("#show_mailInput4").hide();
+		$("#hide_add").show();
+		});
+</script> 
+<script>
+
+		
+		$(function(){
+			$('#search-contacts').on("click",function(){
+				$.get("/getContacts", {query: $("#search").val()}, function(data){
+					
+				}).done(function(data){
+					console.log(data);
+					if(data && data.length>0){
+						console.log("working");
+						var contacts="";
+						for(var item in data){
+							contacts+='<p>' + data[item].first_name + '</p>';						
+						}
+						console.log(contacts);	
+						$('#display-name').html(contacts);
+					}else{
+						var error='<p>No contacts found</p>';						
+
+						$('#display-name').html(error);
+					}
+				}).fail(function(err){
+					console.log(err);
+				});
+			});
+
+			$(".contact-name").on('click',function(){
+				$this=$(this);
+				var number=$this.attr('data-mobileNumber');
+				console.log($this);
+				console.log(number);
+				$.get("/getContactsByNumber", {query: number}, function(data){
+					
+				}).done(function(data){
+					console.log(data);
+					$("#name").html(data.first_name);
+					$("#mob").html(data.mobile_number);
+					$("#home-mob").html(data.home_number);
+					$("#mail").html(data.email);
+					$("#addr").html(data.address);
+				}).fail(function(err){
+					console.log(err);
+				});
+			});
+		});
+</script> 
+
+</body>
+</html>
