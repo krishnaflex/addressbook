@@ -11,19 +11,14 @@ module.exports=function(){
 		models=require('./schemas');
 
 	app.set('port', process.env.PORT || 3000);
-	app.set('views', __dirname + '/views');
-	app.engine('dust', cons.dust);
-	app.set('view engine', 'dust');
 	app.use(express.static(path.join(__dirname, 'public')));
 
 	app.use(bodyParser.json()).use(bodyParser.urlencoded({ extended: true, defer: true }));
 	
 	/*login routs*/
-	app.get('/', routes.getContactList);
-	app.post('/', routes.postContactList);
-
-	app.get('/getContacts', routes.getContacts);
-	app.get('/getContactsByNumber', routes.getContactsByNumber);
-
+	app.get('/getContactList', routes.getContactList);
+	app.post('/addContact', routes.addContact);
+	app.post('/updateContact', routes.updateContact);
+	
 	return app;
 }

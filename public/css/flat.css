@@ -73,17 +73,6 @@
         font-style: normal;
     }
 	
-		@font-face {
-         font-family: "SourceSansProSemiBold";
-        src: url('../fonts/SourceSansPro-Semibold.eot');
-        src: url('../fonts/SourceSansPro-Semibold.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/SourceSansPro-Semibold.svg#SourceSansPro') format('svg'),
-        url('../fonts/SourceSansPro-Semibold.woff') format('woff'),
-        url('..fonts/SourceSansPro-Semibold.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-    }
-
 @font-face {
         font-family: "SourceSansProBold";
         src: url('../fonts/SourceSansPro-Bold.eot');

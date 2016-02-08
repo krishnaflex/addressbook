@@ -1,10 +1,14 @@
 
-
+.sel{
+  background-color: #d3d3d3; 
+}
 
 a, a:active, a:focus {
 outline: none;
 } 
-  
+.stay-relative{
+  position: relative;
+}
 
 .divx_width{
    overflow-x:hidden;
@@ -120,10 +124,6 @@ outline: none;
   display:none !important;
 }
 
-/*
-  .table {
-display:inherit !important;
-} */
 
 
 body{background-color:#F1F4F6; color:#33383B}
@@ -769,4 +769,15 @@ html {
   -webkit-text-size-adjust: 100%;
       -ms-text-size-adjust: 100%;
 }
-.contact-name{cursor:pointer;}
+.contact-name{cursor:pointer;padding-left: 15px;}
+#display-name{
+    position: absolute;
+    background: #fff;
+    width: 92%;
+    border: 1px solid #d3d3d3;
+    padding: 4%;
+
+    p{
+      margin: 5px 0;
+    }
+}
